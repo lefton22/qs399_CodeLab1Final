@@ -1,0 +1,25 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script2/thisCollideWith.cs">
+    <Files>
+      <File FileName="Assets/script2/thisCollideWith.cs" Line="36" Column="47" />
+      <File FileName="Assets/script2/buildforbbiden.cs" Line="1" Column="1" />
+      <File FileName="Assets/newhappen.cs" Line="1" Column="1" />
+      <File FileName="Assets/script/placewheels.cs" Line="1" Column="1" />
+      <File FileName="Assets/SingleGear0.cs" Line="1" Column="1" />
+      <File FileName="Assets/script/eachGear.cs" Line="1" Column="1" />
+      <File FileName="Assets/script/line_w2.cs" Line="1" Column="1" />
+      <File FileName="Assets/script/line_w3.cs" Line="1" Column="1" />
+      <File FileName="Assets/script2/cue_showOrNot.cs" Line="1" Column="1" />
+      <File FileName="Assets/script2/headLoop.cs" Line="1" Column="1" />
+      <File FileName="Assets/script/meetwho.cs" Line="1" Column="1" />
+      <File FileName="Assets/script/npc1.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/sun/Documents/nyuGAMECENTER/T2/CodeLab1/midAssignment_TimeWheels/TimesWheels3/Assets/newhappen.cs" line="11" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
