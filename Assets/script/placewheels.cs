@@ -90,9 +90,13 @@ public class placewheels : MonoBehaviour {
 					GameObject wheel_n2 = Instantiate (Resources.Load ("w1"), mouseV3, Quaternion.identity) as GameObject; // "w2"is the name in the Resources file,
 					//mouseV3 is the place which it will be born. 
 
+					mouseAll.caniDrag = true;
+					print ("mouseAll.caniDrag : " +mouseAll.caniDrag );
+
 					isClick2 = true;
 					whichWHeel = 0;
 					lline_w3.SendMessage ("hide");
+
 
 					//Debug.Log ("what's new wheel: " + wheel_n2);
 
@@ -109,6 +113,8 @@ public class placewheels : MonoBehaviour {
 		print ("run pickupW2();" +"whichWHeel: " + whichWHeel);
 
 		lline_w2.SendMessage ("appear");
+		//gameObject.GetComponent<mouseAll> ().ca
+		mouseAll.caniDrag = false;
 	}
 
 	public void pickupW3()
@@ -117,6 +123,7 @@ public class placewheels : MonoBehaviour {
 		print ("run pickupW3();" +"whichWHeel: " + whichWHeel);
 
 		lline_w3.SendMessage ("appear");
+		mouseAll.caniDrag = false;
 	}
 
 	void buildW2()
@@ -143,6 +150,9 @@ public class placewheels : MonoBehaviour {
 				num_wheels2 = num_wheels2 + 1;
 
 				wheel_n.name = "w2" + num_wheels2;
+
+				mouseAll.caniDrag = true;
+				print ("mouseAll.caniDrag : " +mouseAll.caniDrag );
 
 
 				isClick = true;

@@ -50,6 +50,7 @@
      <Compile Include="Assets\Gear1.cs" />
      <Compile Include="Assets\Gear2.cs" />
      <Compile Include="Assets\SingleGear0.cs" />
+     <Compile Include="Assets\dragAndDrop.cs" />
      <Compile Include="Assets\eachGearManager.cs" />
      <Compile Include="Assets\generate_WayPointSys.cs" />
      <Compile Include="Assets\inherit.cs" />
@@ -75,7 +76,9 @@
      <Compile Include="Assets\script2\beMyNpc.cs" />
      <Compile Include="Assets\script2\buildforbbiden.cs" />
      <Compile Include="Assets\script2\cue_showOrNot.cs" />
+     <Compile Include="Assets\script2\eachTime.cs" />
      <Compile Include="Assets\script2\headLoop.cs" />
+     <Compile Include="Assets\script2\mouseAll.cs" />
      <Compile Include="Assets\script2\npcMove.cs" />
      <Compile Include="Assets\script2\npcTransport.cs" />
      <Compile Include="Assets\script2\speedLoop.cs" />
