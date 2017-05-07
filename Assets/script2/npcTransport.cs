@@ -16,11 +16,17 @@ public class npcTransport : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		int o = gameObject.GetComponent<thisCollideWith> ().gear_collidewithThis.Count;
+
+		for (int j = 0; j < o; j ++)
+		{
 		//print (Time.time);
 		if (Time.time - meetTime > 2f) 
 		{//if is frozen time
-			if (touch != null)
+			if (gameObject.GetComponent<thisCollideWith>().gear_collidewithThis[j] != null)
 			{
+				touch = gameObject.GetComponent<thisCollideWith> ().gear_collidewithThis [j];
+				
 				Debug.DrawLine (touch.transform.position, gameObject.transform.position, Color.cyan);
 				Vector3 v3_other = touch.transform.position;
 				Vector3 v3_this = transform.position;
@@ -49,15 +55,16 @@ public class npcTransport : MonoBehaviour {
 				}
 			}
 		}
+		}
 		
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-
-		if (other.tag == "wheel" || other.tag == "hasSlave") 
-		{
-			touch = other.gameObject;
-		}
+//
+//		if (other.tag == "wheel" || other.tag == "hasSlave") 
+//		{
+//			touch = other.gameObject;
+//		}
 	}
 }
