@@ -33,11 +33,13 @@ public class dragAndDrop : MonoBehaviour
 	bool isFollowMouse;
 	GameObject caWheel;
 
+	float clickTime;
+
 	void Update()
 	{
 		if (Input.GetMouseButtonDown (0)) 
 		{
-			if (mouseAll.caniDrag) 
+			if (mouseAll.caniDrag && !isFollowMouse) 
 			{
 				RaycastHit2D[] hits; 
 				hits = Physics2D.RaycastAll (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
@@ -51,6 +53,8 @@ public class dragAndDrop : MonoBehaviour
 							Debug.Log ("Target Position: " + i + ": " + hits [i].collider.gameObject.transform.position);
 							isFollowMouse = true;
 							caWheel = hits [i].collider.gameObject;
+
+							clickTime = Time.time;
 //							hits [i].transform.position = new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 
 //								Camera.main.ScreenToWorldPoint (Input.mousePosition).y, 0);
 
@@ -66,8 +70,20 @@ public class dragAndDrop : MonoBehaviour
 			print ("isFollow");
 			caWheel.transform.position = new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 
 				Camera.main.ScreenToWorldPoint (Input.mousePosition).y, 0);
-
+			if (Time.time - clickTime > 0.3f ) 
+			{
+				if (Input.GetMouseButtonDown (0)) {
+					isFollowMouse = false;
+					//print ("isFollowMouse false: " + isFollowMouse);
+					//caWheel.transform.position = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				}
+//				if (!isFollowMouse) 
+//				{
+//					caWheel.transform.position = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+//				}
+			}
 
 		}
+
 	}
 }
