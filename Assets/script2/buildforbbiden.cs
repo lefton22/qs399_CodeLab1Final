@@ -39,12 +39,12 @@ public class buildforbbiden : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		print ( gameObject + " triggers " + other.name);
+//		print ( gameObject + " triggers " + other.name);
 		if (other.tag == "wheel" || other.tag == "hasSlave") 
 		{
-			print ("collides with other insideCollision");
+//			print ("collides with other insideCollision");
 			eachGearManager.canIbuild = false;
-			print ("eachGearManager.canIbuild = false;");
+//			print ("eachGearManager.canIbuild = false;");
 
 			lcue.SendMessage ("showUp");
 
@@ -56,7 +56,7 @@ public class buildforbbiden : MonoBehaviour {
 		if (other.tag == "wheel" || other.tag == "hasSlave") 
 		{
 			eachGearManager.canIbuild = true;
-			print ("eachGearManager.canIbuild = true;");
+	//		print ("eachGearManager.canIbuild = true;");
 
 			lcue.SendMessage ("dissapear");
 

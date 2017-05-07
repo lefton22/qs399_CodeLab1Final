@@ -127,13 +127,13 @@ public class placewheels : MonoBehaviour {
 		////and then click to place the wheel
 		if (Input.GetMouseButtonDown (0) && !isClick)
 		{
-			print ("click mouse");
+//			print ("click mouse");
 			if (eachGearManager.canIbuild == true)
 			{
 				//Vector3 mouseV3 = Camera.main.ScreenToViewportPoint (Input.mousePosition);
 				Vector3 mouseV3 = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 				mouseV3.z = 0;
-				Debug.Log ("mouse position: " + mouseV3 /*+"  2position: " + Input.mousePosition*/);
+//				Debug.Log ("mouse position: " + mouseV3 /*+"  2position: " + Input.mousePosition*/);
 
 				////initiate a wheel from refab
 

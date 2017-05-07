@@ -13,6 +13,7 @@ TagManager:
   - point
   - hasSlave
   - insideCollision
+  - colWithNpc
   layers:
   - Default
   - TransparentFX

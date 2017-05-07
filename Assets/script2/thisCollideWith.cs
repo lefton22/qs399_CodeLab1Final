@@ -10,12 +10,16 @@ public class thisCollideWith : MonoBehaviour {
 
 	bool lisRotate;
 
+	public bool isNpcExit;
+
 
 	void Start () 
 	{
 		gear_collidewithThis = new List<GameObject> ();
 
-		Physics2D.IgnoreLayerCollision (8, 9, true);
+		//Physics2D.IgnoreLayerCollision (8, 9, true);
+
+		isNpcExit = false;
 
 	}
 	
@@ -52,12 +56,24 @@ public class thisCollideWith : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other)
 	{
+//		Physics2D.IgnoreLayerCollision (8, 9, true);
+
+		if (other.tag == "npc") 
+		{
+			print ("a gear exit collission with a npc.");
+			isNpcExit = false;
+		}
+
 		if (other.tag == "wheel" || other.tag == "hasSlave") 
 		{
 			//print ("remove 1");
 				
-			gear_collidewithThis.Remove (other.gameObject);
-			//headLoop.head_withSlave.Remove (other.gameObject);
+			if (isNpcExit) 
+			{
+				gear_collidewithThis.Remove (other.gameObject);
+				//headLoop.head_withSlave.Remove (other.gameObject);
+				isNpcExit = false;
+			}
 
 			lhead_withSlave = new List<GameObject> (GameObject.Find("eachGear_Manager").GetComponent<headLoop>().head_withSlave);
 			lhead_withSlave.Remove (other.gameObject);
@@ -65,19 +81,26 @@ public class thisCollideWith : MonoBehaviour {
 		//	print (gameObject + "remove 2");
 
 		
-		if (gear_collidewithThis.Count == 0) 
-		{
-			gameObject.SendMessage ("speedZero");
-		}
+			if (gear_collidewithThis.Count == 0) 
+			{
+				gameObject.SendMessage ("speedZero");
+			}
 
 
-		if (gear_collidewithThis.Count == 1) 
-		{
-			//gear_collidewithThis.Remove
-			other.GetComponent<SingleGear0>().inWhichBranch =0;
+			if (gear_collidewithThis.Count == 1) 
+			{
+				//gear_collidewithThis.Remove
+				other.GetComponent<SingleGear0>().inWhichBranch =0;
+			}
+
+
+			//gameObject.SendMessage ("exitCollide");
 		}
 
-		gameObject.SendMessage ("exitCollide");
-		}
+//		if (other.tag == "npc") 
+//		{
+//			print ("a gear exit collission with a npc.");
+//			isNpcExit = true;
+//		}
 	}
 }

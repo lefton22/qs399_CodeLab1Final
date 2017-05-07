@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6F144591-B0E4-C080-C01F-82220C304B34}</ProjectGuid>
+    <ProjectGuid>{90CC0984-A219-25F3-8AB6-284764CC3D8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -72,13 +72,21 @@
      <Compile Include="Assets\script\showInfo.cs" />
      <Compile Include="Assets\script\try_method_oop\gear_properties.cs" />
      <Compile Include="Assets\script2\NPCcollideWithNpc.cs" />
+     <Compile Include="Assets\script2\beMyNpc.cs" />
      <Compile Include="Assets\script2\buildforbbiden.cs" />
      <Compile Include="Assets\script2\cue_showOrNot.cs" />
      <Compile Include="Assets\script2\headLoop.cs" />
+     <Compile Include="Assets\script2\npcMove.cs" />
+     <Compile Include="Assets\script2\npcTransport.cs" />
+     <Compile Include="Assets\script2\speedLoop.cs" />
      <Compile Include="Assets\script2\thisCollideWith.cs" />
      <Compile Include="Assets\test_whiisyourparent.cs" />
      <None Include="Assets\save1.txt" />
+     <None Include="Assets\DOTween\DOTween50.xml" />
+     <None Include="Assets\DOTween\readme.txt" />
      <None Include="Assets\README.txt" />
+     <None Include="Assets\DOTween\DOTween43.xml" />
+     <None Include="Assets\DOTween\DOTween46.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -96,6 +104,18 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/sun/Documents/nyuGAMECENTER/T2/CodeLab1/Final/qs399_CodeLab1Final/Assets/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/sun/Documents/nyuGAMECENTER/T2/CodeLab1/Final/qs399_CodeLab1Final/Assets/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/sun/Documents/nyuGAMECENTER/T2/CodeLab1/Final/qs399_CodeLab1Final/Assets/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/sun/Documents/nyuGAMECENTER/T2/CodeLab1/Final/qs399_CodeLab1Final/Assets/DOTween/DOTween46.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

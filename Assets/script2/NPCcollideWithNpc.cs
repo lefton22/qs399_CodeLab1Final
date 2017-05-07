@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class NPCcollideWithNpc : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	Collider2D thisCo;
+	Collider2D thisParentCo;
+
+	void Start () 
+	{
+		thisCo = gameObject.GetComponent<BoxCollider2D> ();
+		thisParentCo = transform.parent.GetComponent<CircleCollider2D> ();
+		Physics2D.IgnoreCollision (thisCo, thisParentCo, true);
 	}
 	
 	// Update is called once per frame
@@ -16,6 +21,7 @@ public class NPCcollideWithNpc : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		//print ("collides with NPC.");
 		if (other.tag == "npc") 
 		{
 			print ("npc meet.");

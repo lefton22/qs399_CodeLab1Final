@@ -23,6 +23,8 @@ public class SingleGear0 : MonoBehaviour {
 	float thisRadius;
 	float ratio;
 
+	public int posi_nega;
+
 	void Start () 
 	{
 
@@ -41,6 +43,8 @@ public class SingleGear0 : MonoBehaviour {
 
 		thisRadius = gameObject.GetComponent<CircleCollider2D> ().radius;
 
+	    
+		posi_nega = 0;
 	}
 	
 
@@ -62,6 +66,7 @@ public class SingleGear0 : MonoBehaviour {
 		if (whichSlave == 1) 
 		{
 			speed = 20f;
+			posi_nega = 1;
 			//transform.Rotate (0, 0, Time.deltaTime * speed); // supposed that all the speed is 20f now
 		}
 
@@ -165,17 +170,22 @@ public class SingleGear0 : MonoBehaviour {
 
 	void exitCollide () //clearAllStatement
 	{
-		isRotate = false;
+//		if (gameObject.GetComponent<thisCollideWith> ().isNpcExit) 
+//		{
 
-		lgear_collidewithThis = new List<GameObject> (gameObject.GetComponent<thisCollideWith>().gear_collidewithThis);
-		if (lgear_collidewithThis.Count == 0) 
-		{
-			//isColiided = false;
+			isRotate = false;
 
-			//lgear_collidewithThis.RemoveAll ();
-			inWhichBranch = 0;
-			//print ("quite collision and zero. clearAllStatement");
-		}
+			gameObject.GetComponent<thisCollideWith> ().isNpcExit = false;
+
+			lgear_collidewithThis = new List<GameObject> (gameObject.GetComponent<thisCollideWith> ().gear_collidewithThis);
+			if (lgear_collidewithThis.Count == 0) {
+				//isColiided = false;
+
+				//lgear_collidewithThis.RemoveAll ();
+				inWhichBranch = 0;
+				print ("quite collision and zero. clearAllStatement");
+			}
+//		}
 
 
 //		if (lgear_collidewithThis.Count == 1) 

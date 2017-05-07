@@ -33,7 +33,7 @@ public class cue_showOrNot : MonoBehaviour {
 			if (lisW1_buildCueEnable) {
 				cue.enabled = true;
 			}
-			print ("showup happened");
+//			print ("showup happened");
 		}
 	}
 
