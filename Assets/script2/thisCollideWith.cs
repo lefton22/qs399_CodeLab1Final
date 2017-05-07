@@ -58,27 +58,28 @@ public class thisCollideWith : MonoBehaviour {
 	{
 //		Physics2D.IgnoreLayerCollision (8, 9, true);
 
-		if (other.tag == "npc") 
-		{
-			print ("a gear exit collission with a npc.");
-			isNpcExit = false;
-		}
+//		if (other.tag == "npc") 
+//		{
+//			//print ("a gear exit collission with a npc.");
+//			isNpcExit = false;
+//		}
 
 		if (other.tag == "wheel" || other.tag == "hasSlave") 
 		{
 			//print ("remove 1");
 				
-			if (isNpcExit) 
-			{
+//			if (isNpcExit) 
+//			{
 				gear_collidewithThis.Remove (other.gameObject);
 				//headLoop.head_withSlave.Remove (other.gameObject);
 				isNpcExit = false;
-			}
+				print ("npc exit");
+//			}
 
 			lhead_withSlave = new List<GameObject> (GameObject.Find("eachGear_Manager").GetComponent<headLoop>().head_withSlave);
 			lhead_withSlave.Remove (other.gameObject);
 			GameObject.Find ("eachGear_Manager").GetComponent<headLoop> ().head_withSlave = lhead_withSlave;
-		//	print (gameObject + "remove 2");
+			print (gameObject.name + "remove 2");
 
 		
 			if (gear_collidewithThis.Count == 0) 
@@ -94,9 +95,9 @@ public class thisCollideWith : MonoBehaviour {
 			}
 
 
-			//gameObject.SendMessage ("exitCollide");
-		}
 
+		}
+		gameObject.SendMessage ("exitCollide");
 //		if (other.tag == "npc") 
 //		{
 //			print ("a gear exit collission with a npc.");

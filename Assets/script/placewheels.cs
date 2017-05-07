@@ -91,7 +91,7 @@ public class placewheels : MonoBehaviour {
 					//mouseV3 is the place which it will be born. 
 
 					mouseAll.caniDrag = true;
-					print ("mouseAll.caniDrag : " +mouseAll.caniDrag );
+					//print ("mouseAll.caniDrag : " +mouseAll.caniDrag );
 
 					isClick2 = true;
 					whichWHeel = 0;
@@ -152,7 +152,7 @@ public class placewheels : MonoBehaviour {
 				wheel_n.name = "w2" + num_wheels2;
 
 				mouseAll.caniDrag = true;
-				print ("mouseAll.caniDrag : " +mouseAll.caniDrag );
+				//print ("mouseAll.caniDrag : " +mouseAll.caniDrag );
 
 
 				isClick = true;

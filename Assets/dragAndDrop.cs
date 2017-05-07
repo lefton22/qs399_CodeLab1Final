@@ -50,7 +50,7 @@ public class dragAndDrop : MonoBehaviour
 					{
 						if (hits [i].collider.gameObject.tag == "wheel" || hits [i].collider.gameObject.tag == "hasSlave") 
 						{
-							Debug.Log ("Target Position: " + i + ": " + hits [i].collider.gameObject.transform.position);
+							//Debug.Log ("Target Position: " + i + ": " + hits [i].collider.gameObject.transform.position);
 							isFollowMouse = true;
 							caWheel = hits [i].collider.gameObject;
 
@@ -67,7 +67,7 @@ public class dragAndDrop : MonoBehaviour
 
 		if (isFollowMouse) 
 		{
-			print ("isFollow");
+			//print ("isFollow");
 			caWheel.transform.position = new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, 
 				Camera.main.ScreenToWorldPoint (Input.mousePosition).y, 0);
 			if (Time.time - clickTime > 0.3f ) 

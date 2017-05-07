@@ -19,12 +19,12 @@ public class NPCcollideWithNpc : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		//print ("collides with NPC.");
-		if (other.tag == "npc") 
-		{
-			print ("npc meet.");
-		}
-	}
+//	void OnTriggerEnter2D(Collider2D other)
+//	{
+//		//print ("collides with NPC.");
+//		if (other.tag == "npc") 
+//		{
+//			print ("npc meet.");
+//		}
+//	}
 }

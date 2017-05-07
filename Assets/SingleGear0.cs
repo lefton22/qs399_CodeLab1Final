@@ -172,7 +172,7 @@ public class SingleGear0 : MonoBehaviour {
 	{
 //		if (gameObject.GetComponent<thisCollideWith> ().isNpcExit) 
 //		{
-
+		print("exitCollide");
 			isRotate = false;
 
 			gameObject.GetComponent<thisCollideWith> ().isNpcExit = false;
@@ -183,7 +183,7 @@ public class SingleGear0 : MonoBehaviour {
 
 				//lgear_collidewithThis.RemoveAll ();
 				inWhichBranch = 0;
-				print ("quite collision and zero. clearAllStatement");
+				//print ("quite collision and zero. clearAllStatement");
 			}
 //		}
 

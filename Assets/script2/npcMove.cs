@@ -161,8 +161,8 @@ public class npcMove : MonoBehaviour {
 
 			Vector3 v3_inGear = v3_intersectPoint + (v3_other - v3_intersectPoint).normalized * (0.6f / 2f); //(0.6f/2f)是半径之差除以2
 
-			print ("v3_intersectPoint: " + v3_intersectPoint);
-			print ("v3_inGear: " + v3_inGear);
+			//print ("v3_intersectPoint: " + v3_intersectPoint);
+			//print ("v3_inGear: " + v3_inGear);
 
 			transform.DOMove (v3_inGear, 0.5f, false);
 			//transform.position = v3_inGear;
@@ -170,7 +170,7 @@ public class npcMove : MonoBehaviour {
 
 			//gameObject.transform.SetParent (ltouch.transform);
 
-			print ("NPC： " + gameObject.name + " collides with a wheel: " + ltouch.name + "  and move");
+			//print ("NPC： " + gameObject.name + " collides with a wheel: " + ltouch.name + "  and move");
 		}
 	}
 }

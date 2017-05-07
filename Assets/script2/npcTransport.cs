@@ -47,7 +47,7 @@ public class npcTransport : MonoBehaviour {
 						//print (gameObject.name + "'s  hit.point: " + i + ": " + hits[i].collider.name);
 						if (hits [i].collider.gameObject.tag == "npc")
 						{
-							print ("npc into the line.");	
+							//print ("npc into the line.");	
 							meetTime = Time.time;
 							hits [i].collider.gameObject.SendMessage ("moveToOther");
 						}
@@ -59,12 +59,12 @@ public class npcTransport : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-//
-//		if (other.tag == "wheel" || other.tag == "hasSlave") 
-//		{
-//			touch = other.gameObject;
-//		}
-	}
+//	void OnTriggerEnter2D(Collider2D other)
+//	{
+////
+////		if (other.tag == "wheel" || other.tag == "hasSlave") 
+////		{
+////			touch = other.gameObject;
+////		}
+//	}
 }
