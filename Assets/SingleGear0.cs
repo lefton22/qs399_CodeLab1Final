@@ -172,13 +172,14 @@ public class SingleGear0 : MonoBehaviour {
 	{
 //		if (gameObject.GetComponent<thisCollideWith> ().isNpcExit) 
 //		{
-		print("exitCollide");
+		//print("exitCollide");
 			isRotate = false;
 
 			gameObject.GetComponent<thisCollideWith> ().isNpcExit = false;
 
 			lgear_collidewithThis = new List<GameObject> (gameObject.GetComponent<thisCollideWith> ().gear_collidewithThis);
-			if (lgear_collidewithThis.Count == 0) {
+			if (lgear_collidewithThis.Count == 0) 
+	    	{
 				//isColiided = false;
 
 				//lgear_collidewithThis.RemoveAll ();

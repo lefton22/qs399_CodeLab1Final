@@ -115,6 +115,7 @@ public class placewheels : MonoBehaviour {
 		lline_w2.SendMessage ("appear");
 		//gameObject.GetComponent<mouseAll> ().ca
 		mouseAll.caniDrag = false;
+		print ("mouseAll.caniDrag = false; ");
 	}
 
 	public void pickupW3()

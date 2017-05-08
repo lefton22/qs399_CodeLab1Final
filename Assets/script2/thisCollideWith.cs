@@ -73,7 +73,7 @@ public class thisCollideWith : MonoBehaviour {
 				gear_collidewithThis.Remove (other.gameObject);
 				//headLoop.head_withSlave.Remove (other.gameObject);
 				isNpcExit = false;
-				print ("npc exit");
+				//print ("npc exit");
 //			}
 
 			lhead_withSlave = new List<GameObject> (GameObject.Find("eachGear_Manager").GetComponent<headLoop>().head_withSlave);

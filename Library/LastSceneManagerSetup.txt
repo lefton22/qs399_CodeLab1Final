@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scene/5_usewaypoint.unity
+- path: Assets/scene/6_debugCollider.unity
   isLoaded: 1
   isActive: 1
