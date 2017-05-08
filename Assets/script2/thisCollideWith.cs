@@ -12,14 +12,18 @@ public class thisCollideWith : MonoBehaviour {
 
 	public bool isNpcExit;
 
+	float radius;
+
 
 	void Start () 
 	{
 		gear_collidewithThis = new List<GameObject> ();
 
-		//Physics2D.IgnoreLayerCollision (8, 9, true);
+		Physics2D.IgnoreLayerCollision (8, 9, true);
 
 		isNpcExit = false;
+
+		radius = gameObject.GetComponent<CircleCollider2D> ().radius;
 
 	}
 	
@@ -37,6 +41,32 @@ public class thisCollideWith : MonoBehaviour {
 			//bug: 如果还与其他轮子相碰，但在其他轮子那里不是第4个，该怎么精确从列表里删除？
 
 		}
+
+	////detect any npc into this gear, and to be their parent
+		RaycastHit2D[] hits; 
+		Vector2 v2_this = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
+		hits = Physics2D.CircleCastAll (v2_this, radius/2, Vector2.zero);
+		for (int i = 0; i < hits.Length; i++) 
+		{
+			print (gameObject.name + "    i: " + i + " " + hits[i].collider.name + " (radius: " + radius/2 +" )");
+			if (hits [i].collider.tag == "npc") 
+			{
+				//print ("npc");
+				if (hits [i].collider.transform.parent == gameObject.transform) 
+				{ 
+					print ("do nothing");
+				}
+				if (hits [i].collider.transform.parent != gameObject.transform)
+				{
+					print ("npc collides with others' gear");
+				hits [i].collider.transform.SetParent(null);
+				hits [i].collider.transform.SetParent (gameObject.transform);
+				//print ("be parent.");
+				}
+
+			}
+		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -95,9 +125,9 @@ public class thisCollideWith : MonoBehaviour {
 			}
 
 
-
+			gameObject.SendMessage ("exitCollide");
 		}
-		gameObject.SendMessage ("exitCollide");
+	
 //		if (other.tag == "npc") 
 //		{
 //			print ("a gear exit collission with a npc.");
