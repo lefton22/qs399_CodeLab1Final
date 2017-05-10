@@ -7,24 +7,51 @@ public class NPCcollideWithNpc : MonoBehaviour {
 	Collider2D thisCo;
 	Collider2D thisParentCo;
 
+	SpriteRenderer sr_npc;
+
+	public bool isBeingBuild;
+
+
 	void Start () 
 	{
-		thisCo = gameObject.GetComponent<BoxCollider2D> ();
-		thisParentCo = transform.parent.GetComponent<CircleCollider2D> ();
-		Physics2D.IgnoreCollision (thisCo, thisParentCo, true);
+//		thisCo = gameObject.GetComponent<BoxCollider2D> ();
+//		thisParentCo = transform.parent.transform.parent.GetComponent<CircleCollider2D> ();
+//		Physics2D.IgnoreCollision (thisCo, thisParentCo, true);
+
+		sr_npc = gameObject.GetComponent<SpriteRenderer> ();
+
+		isBeingBuild = true;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+	{
+
+//		RaycastHit2D[] hits; 
+//		Vector2 v2_this = new Vector2 (gameObject.transform.localPosition.x, gameObject.transform.localPosition.y);
+//		//print (v2_this);
+//		hits = Physics2D.CircleCastAll (v2_this, 0.1f, Vector2.zero);
+//		for (int i = 0; i < hits.Length; i++) 
+//		{ 
+//			print (i +": " + hits[i].collider.gameObject.name);
+//			if (hits [i].collider.gameObject.tag == "npc") 
+//			{
+//				print ("npc and npc meet.");
+//			}
+//		}
+
 	}
 
-//	void OnTriggerEnter2D(Collider2D other)
-//	{
-//		//print ("collides with NPC.");
-//		if (other.tag == "npc") 
-//		{
-//			print ("npc meet.");
-//		}
-//	}
+	void OnTriggerEnter2D(Collider2D other)
+	{
+//		print (other.name+ " collides with NPC.");
+		if (other.tag == "npc") 
+		{
+//			print (other.name + "npc and npc meet.");
+
+			GameObject.Find ("TimeManager").SendMessage ("npcMeetnpc");
+			sr_npc.color = Color.blue;
+
+		}
+	}
 }

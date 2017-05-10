@@ -72,6 +72,8 @@
      <Compile Include="Assets\script\showInfo.cs" />
      <Compile Include="Assets\script\try_method_oop\gear_properties.cs" />
      <Compile Include="Assets\script2\NPCcollideWithNpc.cs" />
+     <Compile Include="Assets\script2\Npc_line.cs" />
+     <Compile Include="Assets\script2\Time_Manager.cs" />
      <Compile Include="Assets\script2\beMyNpc.cs" />
      <Compile Include="Assets\script2\buildforbbiden.cs" />
      <Compile Include="Assets\script2\collisionForbbiden.cs" />
@@ -81,7 +83,9 @@
      <Compile Include="Assets\script2\headLoop.cs" />
      <Compile Include="Assets\script2\mouseAll.cs" />
      <Compile Include="Assets\script2\npcMove.cs" />
+     <Compile Include="Assets\script2\npcRotateSelf.cs" />
      <Compile Include="Assets\script2\npcTransport.cs" />
+     <Compile Include="Assets\script2\placeNPC.cs" />
      <Compile Include="Assets\script2\speedLoop.cs" />
      <Compile Include="Assets\script2\thisCollideWith.cs" />
      <Compile Include="Assets\test_whiisyourparent.cs" />

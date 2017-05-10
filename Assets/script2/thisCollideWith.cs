@@ -14,6 +14,8 @@ public class thisCollideWith : MonoBehaviour {
 
 	float radius;
 
+	GameObject ooo;
+
 
 	void Start () 
 	{
@@ -24,6 +26,8 @@ public class thisCollideWith : MonoBehaviour {
 		isNpcExit = false;
 
 		radius = gameObject.GetComponent<CircleCollider2D> ().radius;
+
+		//print (gameObject.transform.GetChild(0));
 
 	}
 	
@@ -39,31 +43,49 @@ public class thisCollideWith : MonoBehaviour {
 			Destroy (gear_collidewithThis[3]);
 			gear_collidewithThis.Remove (gear_collidewithThis[3]);
 			//bug: 如果还与其他轮子相碰，但在其他轮子那里不是第4个，该怎么精确从列表里删除？
-
 		}
-
+			
 	////detect any npc into this gear, and to be their parent
 		RaycastHit2D[] hits; 
 		Vector2 v2_this = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
 		hits = Physics2D.CircleCastAll (v2_this, radius/2, Vector2.zero);
 		for (int i = 0; i < hits.Length; i++) 
 		{
-			print (gameObject.name + "    i: " + i + " " + hits[i].collider.name + " (radius: " + radius/2 +" )");
+
+			//print (gameObject.name + "    i: " + i + " " + hits[i].collider.name + " (radius: " + radius/2 +" )  ," + hits [i].collider.transform.parent);
 			if (hits [i].collider.tag == "npc") 
 			{
-				//print ("npc");
-				if (hits [i].collider.transform.parent == gameObject.transform) 
+//				print ("if tag = npc," + hits [i].collider.transform.parent);
+
+//				print (hits [i].collider.name + " has no parent");
+//				hits [i].collider.transform.SetParent (gameObject.transform.GetChild (0));	
+//				hits [i].collider.transform.localPosition = new Vector3 (radius/2f, 0,0);
+
+				ooo = hits [i].collider.gameObject;
+				setTrans ();
+
+
+				if (hits [i].collider.transform.parent == gameObject.transform.GetChild(0)) 
 				{ 
-					print ("do nothing");
+//					print ("do nothing");
 				}
-				if (hits [i].collider.transform.parent != gameObject.transform)
+				if (hits [i].collider.transform.parent != gameObject.transform.GetChild(0))
 				{
-					print ("npc collides with others' gear");
-				hits [i].collider.transform.SetParent(null);
-				hits [i].collider.transform.SetParent (gameObject.transform);
+//					print ("npc collides with others' gear");
+
+					//hits [i].collider.transform.SetParent(null);
+					//hits [i].collider.transform.SetParent (gameObject.transform.GetChild(0).transform);
+
+
+					GameObject forever_parent = hits [i].collider.transform.parent.gameObject;
+//					print ("forever_parent : " + forever_parent.name);
+
+					hits [i].collider.transform.parent.transform.SetParent (gameObject.transform);
+					hits [i].collider.transform.SetParent (forever_parent.transform);
+					hits [i].collider.transform.parent.transform.position = gameObject.transform.position;
+
 				//print ("be parent.");
 				}
-
 			}
 		}
 
@@ -133,5 +155,19 @@ public class thisCollideWith : MonoBehaviour {
 //			print ("a gear exit collission with a npc.");
 //			isNpcExit = true;
 //		}
+	}
+
+	void setTrans()
+	{
+
+		if (ooo.transform.parent == gameObject.transform.GetChild (0)) 
+		{
+		}
+		if (ooo.transform.parent != gameObject.transform.GetChild (0)) 
+		{
+			//print (ooo.name + " has no parent");
+			ooo.transform.SetParent (gameObject.transform.GetChild (0));	
+			ooo.transform.localPosition = new Vector3 (radius / 2f, 0, 0);
+		}
 	}
 }

@@ -26,9 +26,9 @@ public class npcMove : MonoBehaviour {
 
 	void Start () 
 	{
-		thisCo = gameObject.GetComponent<BoxCollider2D> ();
-		thisParentCo = transform.parent.GetComponent<CircleCollider2D> ();
-		Physics2D.IgnoreCollision (thisCo, thisParentCo, true);
+//		thisCo = gameObject.GetComponent<BoxCollider2D> ();
+//		thisParentCo = transform.parent.transform.parent.GetComponent<CircleCollider2D> ();
+//		Physics2D.IgnoreCollision (thisCo, thisParentCo, true);
 
 		isGotoOtherGear = false;
 
@@ -141,30 +141,32 @@ public class npcMove : MonoBehaviour {
 
 	void moveToOther()
 	{
-		ltouch = transform.parent.GetComponent<npcTransport>().touch;
+		ltouch = transform.parent.parent.GetComponent<npcTransport>().touch;
 		if (ltouch == null) 
 		{
 			print ("touch = null");
 		}
 		if (ltouch != null) 
 		{
-			//print ("touch: " + touch.name);
-
+			//print ("touch: " + ltouch.name);
 
 			Vector3 v3_other = ltouch.transform.position;
-			Vector3 v3_parent = transform.parent.transform.position;
+			Vector3 v3_parent = transform.parent.parent.transform.position;
 			Vector3 dist_two = v3_other - v3_parent;
 
 
-			float radius = transform.parent.GetComponent<CircleCollider2D> ().radius;
+			float radius = transform.parent.parent.GetComponent<CircleCollider2D> ().radius;
 			Vector3 v3_intersectPoint = v3_parent + dist_two.normalized * radius / 2f; //0.55 是齿轮的边边宽度
 
 			Vector3 v3_inGear = v3_intersectPoint + (v3_other - v3_intersectPoint).normalized * (0.6f / 2f); //(0.6f/2f)是半径之差除以2
 
+//			print("npc move to another gear.");
 			//print ("v3_intersectPoint: " + v3_intersectPoint);
 			//print ("v3_inGear: " + v3_inGear);
 
 			transform.DOMove (v3_inGear, 0.5f, false);
+
+
 			//transform.position = v3_inGear;
 			//meetTime = Time.time;
 

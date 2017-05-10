@@ -25,6 +25,8 @@ public class SingleGear0 : MonoBehaviour {
 
 	public int posi_nega;
 
+
+
 	void Start () 
 	{
 
@@ -155,6 +157,15 @@ public class SingleGear0 : MonoBehaviour {
 
 		}
 		transform.Rotate (0, 0, Time.deltaTime * speed); 
+
+
+
+		// deliver the posi or negative speed information
+
+//		if (speed > 0) 
+//		{
+//			Time_Manager.gearsPosi = Time_Manager.gearsPosi + 1;
+//		}
 	}
 
 

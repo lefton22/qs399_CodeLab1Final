@@ -85,8 +85,6 @@ public class placewheels : MonoBehaviour {
 					mouseV3.z = 0;
 					//Debug.Log ("mouse position: " + mouseV3 /*+"  2position: " + Input.mousePosition*/);
 
-					////initiate a wheel from refab
-
 					GameObject wheel_n2 = Instantiate (Resources.Load ("w1"), mouseV3, Quaternion.identity) as GameObject; // "w2"is the name in the Resources file,
 					//mouseV3 is the place which it will be born. 
 

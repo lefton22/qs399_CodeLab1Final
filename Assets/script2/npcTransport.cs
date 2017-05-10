@@ -21,7 +21,7 @@ public class npcTransport : MonoBehaviour {
 		for (int j = 0; j < o; j ++)
 		{
 		//print (Time.time);
-		if (Time.time - meetTime > 2f) 
+		if (Time.time - meetTime > 4f) 
 		{//if is frozen time
 			if (gameObject.GetComponent<thisCollideWith>().gear_collidewithThis[j] != null)
 			{
@@ -38,6 +38,7 @@ public class npcTransport : MonoBehaviour {
 				Vector2 v2_dist_two = v2_this - v2_other;
 
 				Vector2 dir = v2_this - v2_other;
+
 				RaycastHit2D[] hits;
 				hits = Physics2D.LinecastAll (v2_this, v2_other);
 				for (int i = 0; i < hits.Length; i++)

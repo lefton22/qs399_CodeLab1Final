@@ -39,27 +39,29 @@ public class showInfo : MonoBehaviour {
 
 //		allWheels [7] = GameObject.Find ("w" + 2.ToString);
 		//Debug.Log ("finding: " + allWheels [7]);
-		for (int i = 0; i < 100; i++) 
-		{
-			
-		}
+//		for (int i = 0; i < 100; i++) 
+//		{
+//			
+//		}
 	}
 
 	void Update () 
 	{
 		
-		float w2 = GameObject.Find ("w2").GetComponent<follow_rotate> ().timeHere;  // get the varieble in that object's script!!!
+		//float w2 = GameObject.Find ("w2").GetComponent<follow_rotate> ().timeHere;  // get the varieble in that object's script!!!
 		//float w3 = GameObject.Find ("w3").GetComponent<follow_rotate> ().timeHere; 
 
 //		string json = GameObject.Find ("readJSON").GetComponent<readJSON> ().jsonString;
 
 		//// get the time of W1 and w2 and shows them to the screen
-		ltimeHere_w1 = lrotate.timeHere;
-		ltimeHere_w2 = lfollow_rotate.timeHere;
+//		ltimeHere_w1 = lrotate.timeHere;
+//		ltimeHere_w2 = lfollow_rotate.timeHere;
 		 //Debug.Log ("t1: "+ ltimeHere_w1);
 		//t1 = lrotate.timeHere.ToString();
 
-		timeOfW1.text = "Time in W1: " + ltimeHere_w1 + 
-			"\n" +  "Time in W2: " + w2 ;
+	//	timeOfW1.text = "Time in W1: " + ltimeHere_w1 + 
+		//"\n" +  "Time in W2: " + w2 ;
+
+		timeOfW1.text = "total time: " + Time_Manager.totalTime.ToString();
 	}
 }

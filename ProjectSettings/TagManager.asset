@@ -14,6 +14,7 @@ TagManager:
   - hasSlave
   - insideCollision
   - colWithNpc
+  - roatSelef
   layers:
   - Default
   - TransparentFX
