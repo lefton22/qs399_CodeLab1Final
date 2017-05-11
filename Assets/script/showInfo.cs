@@ -22,6 +22,8 @@ public class showInfo : MonoBehaviour {
 	List<float> timeHeres;
 	List<GameObject> allWheels;
 
+	string whathappened;
+
 	void Start () 
 	{
 		//lrotate = new rotate ();
@@ -62,6 +64,32 @@ public class showInfo : MonoBehaviour {
 	//	timeOfW1.text = "Time in W1: " + ltimeHere_w1 + 
 		//"\n" +  "Time in W2: " + w2 ;
 
-		timeOfW1.text = "total time: " + Time_Manager.totalTime.ToString();
+
+
+		timeOfW1.text = "total time: " + Time_Manager.totalTime.ToString() + "   "+ whathappened;
+	}
+
+	void addnpc1()
+	{
+		whathappened = "add monster 1! consume your 50 time";
+	}
+	void addnpc2()
+	{
+		whathappened = "add monster 2! consume your 100 time";
+	}
+
+	void twonpcmeet()
+	{
+		whathappened = "two monsters meet .. but,  you have more 200 time";
+	}
+
+	void addgear2()
+	{
+		whathappened = "build a gear, its number is.. 1, and consume your 150 time.";
+	}
+
+	void end()
+	{
+		whathappened = "It should be *Game Over* now, pls press the PLAY button for twice.";
 	}
 }

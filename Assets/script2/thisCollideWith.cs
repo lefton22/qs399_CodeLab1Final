@@ -55,21 +55,45 @@ public class thisCollideWith : MonoBehaviour {
 			//print (gameObject.name + "    i: " + i + " " + hits[i].collider.name + " (radius: " + radius/2 +" )  ," + hits [i].collider.transform.parent);
 			if (hits [i].collider.tag == "npc") 
 			{
-//				print ("if tag = npc," + hits [i].collider.transform.parent);
+				//print (hits [i].collider.transform.parent);
+//				//print ("if tag = npc," + hits [i].collider.transform.parent);
 
 //				print (hits [i].collider.name + " has no parent");
 //				hits [i].collider.transform.SetParent (gameObject.transform.GetChild (0));	
 //				hits [i].collider.transform.localPosition = new Vector3 (radius/2f, 0,0);
 
-				ooo = hits [i].collider.gameObject;
-				setTrans ();
-
+//				ooo = hits [i].collider.gameObject;
+//				setTrans ();
 
 				if (hits [i].collider.transform.parent == gameObject.transform.GetChild(0)) 
 				{ 
 //					print ("do nothing");
 				}
-				if (hits [i].collider.transform.parent != gameObject.transform.GetChild(0))
+
+				if (hits [i].collider.gameObject.transform.parent == null ) 
+				{
+					GameObject rotateSelf_1 = Instantiate (Resources.Load ("rotateSelf"), gameObject.transform.position, Quaternion.identity) as GameObject;
+					print ("has no parent.");
+					ooo = hits [i].collider.gameObject;
+					setTrans ();
+
+					rotateSelf_1.name = "rotateSelf";
+					hits [i].collider.transform.SetParent (rotateSelf_1.transform );
+					rotateSelf_1.transform.SetParent (gameObject.transform);
+
+					if (hits [i].collider.gameObject.name == "npc") 
+					{
+						//consume time
+						GameObject.Find ("TimeManager").SendMessage ("addNPC");
+					}
+					if (hits [i].collider.gameObject.name == "npc2") 
+					{
+						//consume time
+						GameObject.Find ("TimeManager").SendMessage ("addNPC2");
+					}
+				}
+
+				if (hits [i].collider.transform.parent != gameObject.transform.GetChild(0) && hits [i].collider.gameObject.transform.parent != null)
 				{
 //					print ("npc collides with others' gear");
 
@@ -86,6 +110,8 @@ public class thisCollideWith : MonoBehaviour {
 
 				//print ("be parent.");
 				}
+
+
 			}
 		}
 
@@ -170,4 +196,6 @@ public class thisCollideWith : MonoBehaviour {
 			ooo.transform.localPosition = new Vector3 (radius / 2f, 0, 0);
 		}
 	}
+
+
 }

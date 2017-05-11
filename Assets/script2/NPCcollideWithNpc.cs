@@ -50,8 +50,33 @@ public class NPCcollideWithNpc : MonoBehaviour {
 //			print (other.name + "npc and npc meet.");
 
 			GameObject.Find ("TimeManager").SendMessage ("npcMeetnpc");
-			sr_npc.color = Color.blue;
+			//sr_npc.color = Color.white;
 
+			GameObject.Find ("Canvas").SendMessage ("twonpcmeet");
+
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other)
+	{
+		//		print (other.name+ " collides with NPC.");
+		if (other.tag == "npc") 
+		{
+//			print ("other .tag == npc");
+//			if (other.name == "npc2") 
+//			{
+//				//Color color1 = new Color (72f,159f,163f);
+//				sr_npc.color = new Color (72f,159f,163f);
+//
+//				print ("other .name == npc2");
+//			}
+//
+//			if (other.name == "npc") 
+//			{
+//				//Color color1 = new Color (72f,159f,163f);
+//				sr_npc.color = Color.cyan;
+//				print ("other .name == npc");
+//			}
 		}
 	}
 }

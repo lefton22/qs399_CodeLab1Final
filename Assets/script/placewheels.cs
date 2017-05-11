@@ -95,7 +95,6 @@ public class placewheels : MonoBehaviour {
 					whichWHeel = 0;
 					lline_w3.SendMessage ("hide");
 
-
 					//Debug.Log ("what's new wheel: " + wheel_n2);
 
 				}
@@ -146,6 +145,7 @@ public class placewheels : MonoBehaviour {
 				wheel_n = Instantiate (Resources.Load ("w2"), mouseV3, Quaternion.identity) as GameObject; // "w2"is the name in the Resources file,
 				//mouseV3 is the place which it will be born. 
 
+				GameObject.Find ("TimeManager").SendMessage ("buildGear2");
 				num_wheels2 = num_wheels2 + 1;
 
 				wheel_n.name = "w2" + num_wheels2;
@@ -159,6 +159,7 @@ public class placewheels : MonoBehaviour {
 				lline_w2.SendMessage ("hide");
 
 				lwhatwouldhappen.SendMessage ("buildHappen");
+
 
 
 				//Debug.Log ("what's new wheel: " + wheel_n);

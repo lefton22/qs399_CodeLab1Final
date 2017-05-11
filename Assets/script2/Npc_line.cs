@@ -35,8 +35,5 @@ public class Npc_line : MonoBehaviour {
 //		gameObject.transform.position = new Vector3 (999f, 999f, 999f);
 	}
 
-	void moveAway()
-	{
 
-	}
 }

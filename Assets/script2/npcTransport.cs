@@ -21,7 +21,7 @@ public class npcTransport : MonoBehaviour {
 		for (int j = 0; j < o; j ++)
 		{
 		//print (Time.time);
-		if (Time.time - meetTime > 4f) 
+		if (Time.time - meetTime > 2.5f) 
 		{//if is frozen time
 			if (gameObject.GetComponent<thisCollideWith>().gear_collidewithThis[j] != null)
 			{
@@ -50,7 +50,11 @@ public class npcTransport : MonoBehaviour {
 						{
 							//print ("npc into the line.");	
 							meetTime = Time.time;
-							hits [i].collider.gameObject.SendMessage ("moveToOther");
+							
+
+								hits [i].collider.gameObject.SendMessage ("moveToOther");
+
+
 						}
 					}
 				}

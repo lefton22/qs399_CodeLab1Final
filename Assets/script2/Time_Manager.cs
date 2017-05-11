@@ -15,7 +15,7 @@ public class Time_Manager : MonoBehaviour {
 
 	void Start () 
 	{
-		startTime = 500f; // initial time resource
+		startTime = 1000f; // initial time resource
 
 		changeTime = 0f;
 
@@ -50,6 +50,10 @@ public class Time_Manager : MonoBehaviour {
 
 		totalTime =  totalTime -  1/* reduce one unit per second*/ + changeTime ;
 
+		if (totalTime < 0) 
+		{
+			whenzero ();
+		}
 
 
 	}
@@ -57,6 +61,40 @@ public class Time_Manager : MonoBehaviour {
 	void npcMeetnpc()
 	{
 		//print ("npc and npc meet and add 50 unit times.");
-		totalTime = totalTime + 50f;
+		totalTime = totalTime + 200f;
 	}
+
+	void addNPC()
+	{
+		print ("add npc");
+		totalTime = totalTime - 50f;
+
+		GameObject.Find ("Canvas").SendMessage ("addnpc1");
+	}
+
+	void addNPC2()
+	{
+		print ("add npc2");
+		totalTime = totalTime - 100f;
+
+		GameObject.Find ("Canvas").SendMessage ("addnpc2");
+	}
+
+	void buildGear1()
+	{
+		
+	}
+	void buildGear2()
+	{
+		print ("buildGear2");
+		totalTime = totalTime - 150f;
+		GameObject.Find ("Canvas").SendMessage ("addgear2");
+
+	}
+
+	void whenzero()
+	{
+		GameObject.Find ("Canvas").SendMessage ("end");
+	}
+
 }

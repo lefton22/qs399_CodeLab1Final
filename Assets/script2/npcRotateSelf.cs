@@ -13,6 +13,7 @@ public class npcRotateSelf : MonoBehaviour {
 	void Start () 
 	{
 		speed_npc = 1f;
+		speed_npc2 = 0.2f;
 	}
 	
 
@@ -20,7 +21,11 @@ public class npcRotateSelf : MonoBehaviour {
 	{
 		if (gameObject.transform.GetChild (0).name == "npc") // to define which npc, this place is npc, there will be another npc
 		{
-			//speed = speed_npc;
+			speed = speed_npc;
+		}
+		if (gameObject.transform.GetChild (0).name == "npc2") // to define which npc, this place is npc, there will be another npc
+		{
+			speed = speed_npc2;
 		}
 
 		float mother_speed = gameObject.transform.parent.GetComponent<SingleGear0> ().speed;
